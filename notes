@@ -1,0 +1,11 @@
+ssh -i ~/.ssh/ubuntu_box_key.pem ubuntu@18.236.68.125
+
+https://github.com/nodejitsu/node-http-proxy
+https://dashboard.ngrok.com/get-started#
+https://medium.com/botfuel/how-to-expose-a-local-development-server-to-the-internet-c31532d741cc
+https://github.com/nodejitsu/node-http-proxy/issues/1083
+
+1. Start proxy server
+    node app.js
+2. Start ssh tunnel
+    a. ngrok http 5050
