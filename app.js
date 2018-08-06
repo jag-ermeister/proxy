@@ -1,14 +1,14 @@
-var http = require('http');
-var httpProxy = require('http-proxy');
+var express = require('express');
+var proxy = require('http-proxy-middleware');
 
-var proxy = httpProxy.createProxyServer({ ignorePath: true });
+var app = express();
 
-var server = http.createServer(function(req, res) {
-  proxy.web(req, res, {
-    changeOrigin: true,
-    target: 'https://www.techradar.com/news/google-pixel-3'
-  });
-});
+var options = {
+  target: 'https://wrong.host.badssl.com/', 
+  changeOrigin: true,
+  secure: false
+};
 
-console.log("listening on port 5050")
-server.listen(5050);
+app.use('/', proxy(options));
+
+app.listen(5050);
