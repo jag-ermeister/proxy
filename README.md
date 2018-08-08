@@ -1,6 +1,6 @@
 ssh -i ~/.ssh/ubuntu_box_key.pem ubuntu@18.236.68.125
 
-###Setting up the proxy and tunnel using EC2 and OpenSSH:
+### Setting up the proxy and tunnel using EC2 and OpenSSH:
 1. Configure inbound connection rules for the security group associated with the EC2 instance to allow all traffic for the SSH (20), HTTP (80), and HTTPS (443) ports.  Also add a Custom TCP Rule for port 8080 to allow all incoming traffic.
 2. Outbound connection rules should allow all traffic. 
 3. Add this to /etc/ssh/sshd_config:
@@ -20,13 +20,13 @@ is successful.
 6. Once the above test passes, fire up the proxy with `node app.js` and fire a request
 off to `http://18.236.68.125:8080`.
 
-###Setting up the proxy and tunnel using ngrok
+### Setting up the proxy and tunnel using ngrok
 1. Start proxy server: `node app.js`
 2. Start ssh tunnel: `ngrok http 5050`
 
-###Helpful Links
-https://github.com/nodejitsu/node-http-proxy
-https://github.com/nodejitsu/node-http-proxy/issues/1083
-https://dashboard.ngrok.com/get-started#
-https://medium.com/botfuel/how-to-expose-a-local-development-server-to-the-internet-c31532d741cc
-http://www.randomshouting.com/2013/03/21/How-to-expose-your-server-to-the-Internet.html
+### Helpful Links
+- https://github.com/nodejitsu/node-http-proxy
+- https://github.com/nodejitsu/node-http-proxy/issues/1083
+- https://dashboard.ngrok.com/get-started#
+- https://medium.com/botfuel/how-to-expose-a-local-development-server-to-the-internet-c31532d741cc
+- http://www.randomshouting.com/2013/03/21/How-to-expose-your-server-to-the-Internet.html
