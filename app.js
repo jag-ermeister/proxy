@@ -4,7 +4,7 @@ var proxy = require('http-proxy-middleware');
 var app = express();
 
 var options = {
-  target: 'https://wrong.host.badssl.com/', 
+  target: 'http://www.columbia.edu', 
   changeOrigin: true,
   secure: false
 };
@@ -12,3 +12,4 @@ var options = {
 app.use('/', proxy(options));
 
 app.listen(5050);
+console.log('Listening on port 5050...');
